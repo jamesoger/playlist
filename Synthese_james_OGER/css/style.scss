@@ -1,0 +1,188 @@
+body{
+    margin: 0;
+    background: url(../data/images/victrola-record-players-R4Rdi0EfBws-unsplash.jpg) no-repeat center fixed;
+    background-size: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.accueil{
+    .bouton_accueil{
+        margin: 25% 0px 0px 40%;
+        background-color: rgb(132, 132, 136);
+        width: 300px;
+        height: 80px;
+        box-shadow: 10px 5px 5px rgb(40, 38, 38);
+        font-size: large;
+    }
+
+    .bouton_accueil:hover {
+        box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
+    }
+}
+
+
+.chansons{
+    #retour{
+        margin: 30px 0px 5px 46%;
+        background-color: rgb(84, 84, 105);
+        width: 150px;
+        height: 40px;
+        font-size:15px;
+        box-shadow: 10px 5px 5px rgb(40, 38, 38);
+    }
+    #retour:hover{
+        box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
+    }
+}
+
+.recherche {
+    margin-bottom: 10px;
+    input{
+        margin: 10px 0px 4px 42%;
+        width: 300px;
+        height: 24px;
+    }
+}
+    
+
+
+.liste{
+    background-color: rgba(58, 62, 66, 0.712);
+    border: 0.02em solid rgb(140, 137, 137);
+    width: 60%;
+    margin: 0px auto;
+    color: rgb(222, 221, 221);
+    .liste_chanson{
+        display: flex; 
+        padding: 10px;
+        #titre{
+            width: 30%;
+            height: 40px;
+            padding-right: 100px;
+        } 
+
+        #artiste{
+            width: 30%;
+            margin-left: 70px;
+            padding-right: 80px;
+        }
+        #temps{
+            width: 10%;
+        }      
+    }
+}
+
+.liste .actif{
+    background-color: rgba(33, 39, 62, 0.578);
+    background-size: contain;
+}
+
+.audio{
+    width: 60%;
+    height: 190px;
+    margin: 0 auto;
+    background-image: url(../data/images/annie-spratt-6a3nqQ1YwBw-unsplash.jpg);
+    
+
+    #bloc_tags{
+        position: relative;
+        display: flex;
+     #tags{
+        width: 100%;
+        background-color: rgb(61, 59, 59);
+        color: rgb(218, 218, 218);
+        display: flex;
+        border: 1px solid white;    
+        }
+    }
+    #image{
+        width: 130px;
+        height: 130px;
+        
+    }
+    
+    img{
+        margin: 22px;
+        width: 130px;
+        height: 130px;
+        border-radius: 10px;
+    }
+    .cacher_image{
+        display: none;
+    }
+    .son{
+        width: 60px;
+        height: 40px;
+        position: relative;
+        bottom: 220px;
+        left: 80%;
+        
+     .bouton{
+        position: relative;
+        right: 400px;
+        top: 160px;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background-color: red;
+        border: 2px solid white;
+        font-size: 40px;
+        color: white;
+            
+     }
+
+      #volume{
+        margin-top: 80px;
+     }
+    .bouton:hover{
+      box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
+    }
+    p{
+    margin-top: 0px;
+    color:white;
+    }
+
+ 
+    .progression {
+        height: 2px;
+        background-color: white;
+        width: 380px;
+        position: relative;
+        top: 140px;
+        right: 570px;
+           #debut{
+              width: 20px;
+              height: 10px;
+              position: relative;
+              right: 60px;
+              bottom: 28px;
+              
+           }
+
+           #fin{
+              width: 20px;
+              height: 10px;
+              position: relative;
+              left: 420px;
+              bottom: 54px;
+           }
+
+           #rond_progression{
+             width: 20px;
+             height: 20px;
+             background-color: white;
+             border-radius: 50%;
+             position: relative;
+             bottom: 8px;  
+             
+           }
+        }
+    }
+}
+
+
+
+    
+   
+   

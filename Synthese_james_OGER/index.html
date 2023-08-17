@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="accueil"v-if="page_active =='accueil'">
+            <button class="bouton_accueil" @click="changerPage('chansons')">Voir les chansons</button>
+       </div>
+       <div class="chansons" v-if="page_active == 'chansons'">
+            <button id="retour"@click="changerPage('accueil')">Retour à l'accueil</button>
+          <div class="recherche">
+             <input 
+             type="text"
+             v-model="texte_recherche"
+             placeholder="Recherche par chanson ou artiste"
+             >
+         </div>
+         <div class="liste" v-for="chanson of filtrer(chansons)">
+            <div class="liste_chanson" @click="AfficherDetails(chanson)":class="{actif: chanson == chanson_selection}" >
+                <div id="titre">{{ chanson.titre}}</div>
+                <div id="artiste">{{ chanson.artiste}}</div>
+                <div id="temps" >{{ConvertirSecondesenMinutes(chanson.temps)}}</div>
+            </div>
+         </div>
+         <div class="audio">
+             <div id="image">
+                 <img :src="'data/images/' + image_chanson" alt="" :class="{cacher_image: !image_chanson}">
+             </div>
+             <div class="son"> 
+                 <audio 
+                     :src="'data/audio/'+ source_audio"
+                     ref="balise_audio"
+                     @timeupdate="timeupdate()"
+                     :volume="volume_reel"
+                     >  
+                 </audio>
+                 <div class="progression">
+                     <div id="rond_progression" :style="{left: progression  + '%'}"></div>
+                     <p id="debut">{{temps_reel}}</p>
+                     <p id="fin">{{ConvertirSecondesenMinutes(temps_chanson)}}</p>
+                 </div>
+                    <button class="bouton"@click="lancerAudio()"v-html="play_pause"></button>
+                    <input id="volume"type="range" min="1" max="100"v-model="volume" @input="setVolume()">   
+                    <p>Volume({{volume}}%)</p>          
+              </div>
+              <div id="bloc_tags">
+                 <div id="tags"v-for="tag of tags_chanson">{{tag}}</div>
+              </div>        
+         </div>
+       </div>   
+    </div>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
